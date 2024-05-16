@@ -288,12 +288,11 @@ local function ipr_CanalChange(len, ply)
         if not ipr_Channels[ipr_Pkey] or not ipr_Channels[ipr_Pkey][ipr_String] then
             return ply:ChatPrint(ipr_CanalGroup.Lang.Channel_Join)
         end
-
         ipr_Channels[ipr_Pkey][ipr_String].Locked = ipr_Bool
         ipr_Bool = ipr_Bool and "verrouillé" or "déverrouillé"
-        ply:ChatPrint("Le canal est maintenant " ..ipr_Bool.. " !")
-
+        
         ipr_SendOmit(ply)
+        ply:ChatPrint("Le canal est maintenant " ..ipr_Bool.. " !")
     elseif (ipr_Int == 4) then
         if not ipr_CanalGroup.Allowed[ipr_Pkey] or not ipr_CanalGroup.Allowed[ipr_Pkey].Permissions.job[ipr_Team] then
             return ply:ChatPrint(ipr_CanalGroup.Lang.No_permission)
