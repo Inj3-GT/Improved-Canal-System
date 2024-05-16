@@ -32,7 +32,7 @@ local function ipr_Allowkey(p, x, t)
         local ipr_PGroup = p:GetUserGroup()
         ipr_PSelect = ipr_PSelect[x]
 
-        if ipr_ChannelAllow.Permissions.job[t].rank_access[ipr_PGroup] or ipr_ChannelAllow.Permissions.job[t][ipr_PSelect] then
+        if (ipr_ChannelAllow.Permissions.job[t].rank_access[ipr_PGroup] or ipr_ChannelAllow.Permissions.job[t][ipr_PSelect]) then
             return true
         end
     end
@@ -124,7 +124,7 @@ end
 
 local function ipr_Update(k, p, u)
     p.ipr_Channel = {pkey = k, pcanal = not u and ipr_Queue or u}
- 
+    -----
     ipr_ClearTable(p)
     ipr_UpdateTable(k, p, u)
     ipr_SendOmit(p)
