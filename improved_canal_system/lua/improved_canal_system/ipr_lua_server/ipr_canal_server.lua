@@ -175,11 +175,12 @@ end
 local ipr_Channel_AntiSpam = {}
 hook.Add("PlayerDisconnected", "ipr_Channels_Disconnected", function(ply)
     if (ply.ipr_Channel) then
+        ipr_ClearTable(ply)
+        ipr_SendOmit(ply)
+
         if (ipr_Channel_AntiSpam[ply]) then
             ipr_Channel_AntiSpam[ply] = nil
         end
-        ipr_ClearTable(ply)
-        ipr_SendOmit(ply)
     end
 end)
 
