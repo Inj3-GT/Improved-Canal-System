@@ -10,7 +10,7 @@ local function ipr_UpdateTable(k, p, u)
         ipr_Channels[k] = {}
     end
     if not u then
-        u = ipr_Queue --- Queued for update
+        u = ipr_Queue
     end
     if not ipr_Channels[k][u] then
         ipr_Channels[k][u] = {}
