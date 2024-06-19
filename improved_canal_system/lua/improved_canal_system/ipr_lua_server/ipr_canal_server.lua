@@ -185,9 +185,10 @@ hook.Add("PlayerDisconnected", "ipr_Channels_Disconnected", function(ply)
 end)
 
 local function ipr_CanalVoice(listener, talker)
-    if (talker.ipr_Channel) then
-        local ipr_PFindKey, ipr_PFindCanal = ipr_Channels[talker.ipr_Channel.pkey], listener.ipr_Channel.pcanal
-        ipr_PFindCanal = (ipr_PFindCanal ~= ipr_Queue) and ipr_PFindCanal or false
+    local ipr_PTalk, ipr_PList = talker.ipr_Channel, listener.ipr_Channel
+    if (ipr_PTalk and ipr_PList) then
+        local ipr_PFindKey, ipr_PFindCanal = ipr_Channels[ipr_PTalk.pkey], ipr_PList.pcanal
+        ipr_PFindCanal = (ipr_PFindCanal ~= ipr_Queue) and ipr_PFindCanal
 
         local ipr_PFindVoice = (ipr_PFindKey and ipr_PFindCanal)
         if (ipr_PFindVoice) then
