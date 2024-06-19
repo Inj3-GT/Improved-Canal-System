@@ -124,7 +124,7 @@ end
 
 local function ipr_Update(k, p, u)
     p.ipr_Channel = {pkey = k, pcanal = not u and ipr_Queue or u}
-    -----
+ 
     ipr_ClearTable(p)
     ipr_UpdateTable(k, p, u)
     ipr_SendOmit(p)
