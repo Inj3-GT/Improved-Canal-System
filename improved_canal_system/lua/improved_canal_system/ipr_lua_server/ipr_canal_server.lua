@@ -227,6 +227,9 @@ local function ipr_CanalChange(len, ply)
     if not IsValid(ply) or not ipr_CanalAntiSpam(ply) then
         return
     end
+    if not ply.ipr_Channel then
+        return
+    end
     local ipr_Pkey, ipr_PCanal = ply.ipr_Channel.pkey, ply.ipr_Channel.pcanal
     if not ipr_Channels[ipr_Pkey] or not ipr_Channels[ipr_Pkey][ipr_PCanal] then
         return
