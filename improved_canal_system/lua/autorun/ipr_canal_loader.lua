@@ -34,7 +34,7 @@ local ipr_PLoader = {
     },
 }
 ipr_PLoader.Script = "Improved Canal System"
-ipr_PLoader.Version = "1.0"
+ipr_PLoader.Version = "1.1"
 
 local function ipr_SendFile(tbl, tbl_)
     local ipr_tb = tbl.file
