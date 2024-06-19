@@ -190,8 +190,7 @@ local function ipr_CanalVoice(listener, talker)
         local ipr_PFindKey, ipr_PFindCanal = ipr_Channels[ipr_PTalk.pkey], ipr_PList.pcanal
         ipr_PFindCanal = (ipr_PFindCanal ~= ipr_Queue) and ipr_PFindCanal
 
-        local ipr_PFindVoice = (ipr_PFindKey and ipr_PFindCanal)
-        if (ipr_PFindVoice) then
+        if (ipr_PFindKey and ipr_PFindCanal) then
             if ipr_PFindKey[ipr_PFindCanal][talker] and ipr_PFindKey[ipr_PFindCanal][listener] then
                 if not talker.ipr_ChanMic and not listener.ipr_GChan then
                     return true
